@@ -6,13 +6,13 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:32:10 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/05 14:06:46 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:42:51 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_strlcat_custom(char *restrict dst, char src, size_t dstsize)
+static void	ft_strlcat_custom(char *dst, char src, size_t dstsize)
 {
 	size_t	dest_length;
 
