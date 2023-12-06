@@ -6,45 +6,59 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:43:51 by juestrel          #+#    #+#             */
-/*   Updated: 2023/11/29 13:00:31 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/06 20:07:59 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_return_result(int i, int needle_length, const char *haystack)
+static int	ft_strncmp_custom(const char *s1, const char *s2, size_t n)
 {
-	if (i != needle_length)
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] != '\0' && s2[i] != '\0') && i < n)
 	{
-		return (0);
+		if ((unsigned char)s1[i] > (unsigned char)s2[i])
+		{
+			return (1);
+		}
+		else if ((unsigned char)s1[i] < (unsigned char)s2[i])
+		{
+			return (-1);
+		}
+		i++;
 	}
-	return ((char *)haystack - i);
+	if (i != ft_strlen(s2))
+	{
+		return (-1);
+	}
+	return (0);
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
 	size_t	needle_length;
 	size_t	counter;
 
-	i = 0;
 	needle_length = ft_strlen(needle);
 	counter = 0;
 	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (*haystack != '\0' && i < needle_length && counter < len)
 	{
-		if (*haystack == needle[i])
-		{
-			i++;
-			haystack++;
-		}
-		else if (*haystack != needle[i])
-		{
-			i = 0;
-			haystack++;
-		}
-		counter++;
+		return ((char *)haystack);
 	}
-	return (ft_return_result(i, needle_length, haystack));
+	while (*haystack != '\0' && counter < len)
+	{
+		if ((*haystack == *needle) && (ft_strncmp_custom(haystack, needle, len
+					- counter) == 0))
+		{
+			return ((char *)haystack);
+		}
+		else
+		{
+			haystack++;
+			counter++;
+		}
+	}
+	return (NULL);
 }
