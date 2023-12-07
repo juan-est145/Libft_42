@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:59 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/05 15:28:07 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:42:16 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_word_count(char const *s, char c)
 		}
 		i++;
 	}
-	if (s[0] != '\0' && s[0])
+	if (s[0] != '\0' && s[0] && s[i - 1] != c && s[i - 2] != c)
 	{
 		word_count++;
 	}
@@ -41,6 +41,11 @@ static char	*ft_substr_custom(char const *s, unsigned int start, size_t len)
 {
 	char	*substring;
 
+	substring = NULL;
+	if (substring != NULL)
+	{
+		free(substring);
+	}
 	substring = (char *)malloc((len + 1) * sizeof(char));
 	if (substring == NULL)
 	{
