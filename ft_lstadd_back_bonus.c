@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:43:26 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/07 11:25:08 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:41:46 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		*lst = new;
 		new->next = NULL;
+		return ;
 	}
 	temp = ft_lstlast(*lst);
 	temp->next = new;
-	new->next = NULL;
 }
