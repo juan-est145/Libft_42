@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:59 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/07 13:03:35 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:45:38 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ char	**ft_split(char const *s, char c)
 	if (word_count == 0)
 	{
 		result = (char **)malloc(1 * (sizeof(char *)));
+		if (result == NULL)
+			return (NULL);
 		*result = NULL;
 		return (result);
 	}
