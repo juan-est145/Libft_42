@@ -6,7 +6,7 @@
 /*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:19:31 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/05 16:50:07 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:13:39 by juestrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= str_len)
 	{
 		substring = (char *)malloc(1 * sizeof(char));
+		if (substring == NULL)
+		{
+			return (NULL);
+		}
 		substring[0] = '\0';
 		return (substring);
 	}
