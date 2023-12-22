@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juestrel <juestrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan_est145 <juan_est145@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:32:10 by juestrel          #+#    #+#             */
-/*   Updated: 2023/12/06 18:42:51 by juestrel         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:35:10 by juan_est145      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ static void	ft_putnbr(int nb, char *result)
 
 static char	*ft_fill_string(int n, char *result)
 {
-	char	current_number;
-
-	current_number = 0;
 	if (n == 0)
 	{
 		ft_strlcpy(result, "0", sizeof("0"));
